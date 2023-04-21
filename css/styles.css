@@ -528,6 +528,7 @@ ul {
   background: var(--object-primary-background-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
   justify-content: center;
   cursor: pointer;
 }
@@ -704,6 +705,7 @@ ul {
   pointer-events: none;
   transform: rotate(100deg);
 }
+/*modal form*/
 .modal-form label {
   display: flex;
   flex-direction: column;
@@ -779,9 +781,7 @@ ul {
 .modal-form textarea:focus {
   border-color: var(--object-primary-background-color);
 }
-.modal-form input[type="checkbox"] {
-  display: none;
-}
+
 .modal-form-paragraph {
   font-size: 14px;
   line-height: 24px;
