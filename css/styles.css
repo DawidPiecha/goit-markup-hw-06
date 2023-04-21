@@ -731,6 +731,30 @@ ul {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   margin-top: 4px;
+  padding-left: 42px;
+  outline: none;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form input:focus {
+  border-color: var(--object-primary-background-color);
+}
+.modal-form-input-with-icon {
+  position: relative;
+}
+.modal-form svg {
+  position: absolute;
+  left: 15px;
+  top: 14px;
+  fill: var(--text-primary-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input-with-icon input:focus + svg {
+  fill: var(--object-primary-background-color);
 }
 .modal-form textarea {
   resize: none;
@@ -743,10 +767,20 @@ ul {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  margin-bottom: 20px;
+
+  outline: none;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
+}
+.modal-form textarea:focus {
+  border-color: var(--object-primary-background-color);
+}
+.modal-form input[type="checkbox"] {
+  display: none;
 }
 .modal-form-paragraph {
   font-size: 14px;
@@ -755,6 +789,7 @@ ul {
   color: var(--text-secondary-color);
   padding-left: 77px;
   padding-right: 54px;
+  margin-top: 20px;
 }
 .modal-form-button {
   width: 200px;

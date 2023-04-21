@@ -560,22 +560,32 @@
  <form class="modal-form">
   <label >
     Imię
-    <input type="text" name="modal_username" />
+    <div class="modal-form-input-with-icon"><input type="text" name="modal_username" />
+    <svg width="20" height="20">
+      <use href="./images/icons.svg#icon-person"></use>
+    </svg></div>
   </label>
   <label>
     Telefon
-    <input type="tel" name="modal_telephone"/>
+    <div class="modal-form-input-with-icon"><input type="tel" name="modal_telephone"/>
+    <svg width="20" height="20">
+      <use href="./images/icons.svg#icon-phone"></use>
+    </svg></div>
   </label>
   <label>
     Email
-    <input type="email" name="modal_email"/>
+    <div class="modal-form-input-with-icon"><input type="email" name="modal_email"/>
+    <svg width="20" height="20">
+      <use href="./images/icons.svg#icon-email"></use>
+    </svg></div>
   </label>
   <label>
     Komentarz
     <textarea name="modal-comment" rows="5" placeholder="Wprowadź tekst"></textarea>
   </label>
-<p class="modal-form-paragraph">Oświadczam iż akceptuję <a href="#">Regulamin</a> i <a href="#">Politykę Prywatności</a></p>
-
+  
+   <p class="modal-form-paragraph">Oświadczam iż akceptuję <a href="#">Regulamin</a> i <a href="#">Politykę Prywatności</a></p>
+ 
   <button class="modal-form-button" type="submit">Wyślij</button>
 </form>
         </div>
