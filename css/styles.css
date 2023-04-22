@@ -747,8 +747,8 @@ ul {
 }
 .modal-form-input-with-icon svg {
   position: absolute;
-  left: 15px;
-  top: 14px;
+  left: 55px;
+  top: 27px;
   fill: var(--text-primary-color);
   transition-property: fill;
   transition-duration: 250ms;
@@ -810,7 +810,10 @@ ul {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
+[type="checkbox"]:focus + .modal-form-label-checkbox::before {
+  outline: 4px;
+  outline-color: var(--object-primary-background-color);
+}
 [type="checkbox"]:checked + .modal-form-label-checkbox::after {
   content: "";
   position: absolute;
