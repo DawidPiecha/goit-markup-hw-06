@@ -706,7 +706,7 @@ ul {
   transform: rotate(100deg);
 }
 /*modal form*/
-.modal-form label {
+.modal-form-label {
   display: flex;
   flex-direction: column;
   padding-left: 40px;
@@ -727,7 +727,7 @@ ul {
   margin-bottom: 12px;
   color: var(--text-primary-color);
 }
-.modal-form input {
+.modal-form-input-with-icon input {
   width: 448px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -739,13 +739,13 @@ ul {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-form input:focus {
+.modal-form-input-with-icon input:focus {
   border-color: var(--object-primary-background-color);
 }
 .modal-form-input-with-icon {
   position: relative;
 }
-.modal-form svg {
+.modal-form-input-with-icon svg {
   position: absolute;
   left: 15px;
   top: 14px;
@@ -769,7 +769,6 @@ ul {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-
   outline: none;
   transition-property: border-color;
   transition-duration: 250ms;
@@ -781,16 +780,64 @@ ul {
 .modal-form textarea:focus {
   border-color: var(--object-primary-background-color);
 }
-
-.modal-form-paragraph {
+.modal-form-checkbox-paragraph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.modal-form-checkbox-input {
+  opacity: 0;
+}
+.modal-form-label-checkbox {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
   color: var(--text-secondary-color);
-  padding-left: 77px;
-  padding-right: 54px;
-  margin-top: 20px;
+  margin-left: 7px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
+[type="checkbox"] + .modal-form-label-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  left: -20px;
+  top: 4px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='15' fill='none'%3E%3Cpath fill='%23212121' d='M14.222 1.667v11.666H1.778V1.667h12.444Zm0-1.667H1.778C.8 0 0 .75 0 1.667v11.666C0 14.25.8 15 1.778 15h12.444C15.2 15 16 14.25 16 13.333V1.667C16 .75 15.2 0 14.222 0Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+[type="checkbox"]:checked + .modal-form-label-checkbox::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  left: -20px;
+  top: 4px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='15' fill='none'%3E%3Crect width='16' height='15' fill='%232196F3' rx='2'/%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-width='.2' d='m3.957 7.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  transform: scale(1.05);
+  opacity: 1;
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+}
+[type="checkbox"]:not(:checked) + .modal-form-label-checkbox::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  left: -20px;
+  top: 4px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='15' fill='none'%3E%3Crect width='16' height='15' fill='%232196F3' rx='2'/%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-width='.2' d='m3.957 7.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  transform: scale(0);
+  opacity: 0;
+}
+
 .modal-form-button {
   width: 200px;
   height: 50px;
